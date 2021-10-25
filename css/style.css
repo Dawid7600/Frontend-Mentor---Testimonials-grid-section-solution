@@ -5,14 +5,17 @@
 	--very-dark-grayish-blue: hsl(217, 19%, 35%);
 	--very-dark-blackish-blue: hsl(219, 29%, 14%);
 	--white: hsl(0, 0%, 100%);
-    --light-gray:hsl(0, 0%, 81%);
-    --light-grayish-blue: hsl(210, 46%, 95%);
+	--light-gray: hsl(0, 0%, 81%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 	font-family: "Barlow Semi Condensed", sans-serif;
 	font-size: 13px;
-    background-color: var(--light-grayish-blue);
+	background-color: var(--light-grayish-blue);
 }
 
 header {
@@ -40,8 +43,8 @@ span {
 
 .feedback {
 	border-radius: 10px;
-    padding: 2em;
-	margin: 3rem 1rem 2rem 1rem;
+	padding: 2em;
+	margin: 1rem 0;
 }
 
 .bold-text {
@@ -50,62 +53,65 @@ span {
 	color: var(--white);
 }
 
-
-
 .first-col {
 	background-color: var(--moderate-violet);
 	grid-area: first-col;
 }
 
-.second-col{
-    background-color: var(--very-dark-grayish-blue);
+.second-col {
+	background-color: var(--very-dark-grayish-blue);
 	grid-area: second-col;
 }
 
-.third-col{
+.third-col {
 	grid-area: third-col;
 }
 
-.third-col, .fifth-col{
-    background-color: var(--white);
+.third-col,
+.fifth-col {
+	background-color: var(--white);
 }
 
-.third-col h4, .fifth-col h4, .third-col .bold-text, .fourth-col, .fifth-col .bold-text {
-    color: var(--very-dark-grayish-blue);
-	
+.third-col h4,
+.fifth-col h4,
+.third-col .bold-text,
+.fourth-col,
+.fifth-col .bold-text {
+	color: var(--very-dark-grayish-blue);
 }
 
-
-.third-col span, .fifth-col span, .third-col .quote, .fifth-col .quote{
-    color: var(--light-gray);
+.third-col span,
+.fifth-col span,
+.third-col .quote,
+.fifth-col .quote {
+	color: var(--light-gray);
 }
 
-
-.fourth-col{
-    background-color: var(--very-dark-blackish-blue);
+.fourth-col {
+	background-color: var(--very-dark-blackish-blue);
 	grid-area: fourth-col;
 }
 
-.fourth-col .photo{
-    border: 2px solid var(--moderate-violet);
+.fourth-col .photo {
+	border: 2px solid var(--moderate-violet);
 }
 
-.fifth-col{
+.fifth-col {
 	grid-area: fifth-col;
 }
 
-@media only screen and (min-width: 1440px){
-	.container{
+@media only screen and (min-width: 1440px) {
+	.container {
+		width: 90%;
+		margin: 1rem auto;
 		display: grid;
-		grid-template-columns: repeat(4, minmax(200px,auto ));
-		grid-template-rows: repeat(2,minmax(200px,auto));
-		grid-template-areas: 
-		"first-col first-col second-col fifth-col"
-		"third-col fourth-col fourth-col fifth-col ";
-
-		margin: 5rem;
+		grid-template: repeat(4, minmax(200px, auto)) / repeat(
+				2,
+				minmax(200px, auto)
+			);
+		grid-template-areas:
+			"first-col first-col second-col fifth-col"
+			"third-col fourth-col fourth-col fifth-col ";
+		column-gap: 2rem;
 	}
-
-
-
 }
